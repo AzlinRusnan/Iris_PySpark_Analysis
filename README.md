@@ -1,6 +1,5 @@
-# Iris-PySpark-Analysis
-
-# Iris Classification with PySpark
+# <div align="center">IRIS CLASSIFICATION WITH pySpark</div>
+## <div align="center">![Intro](images/iris2.png)
 
 This project demonstrates how to perform classification on the Iris dataset using Spark MLlib. The steps include loading the dataset, splitting it into training and testing sets, selecting and tuning a classification algorithm, evaluating the model, and conducting a comparative analysis between predicted labels and actual labels.
 
