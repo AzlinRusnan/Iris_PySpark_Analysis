@@ -125,7 +125,7 @@ The Iris dataset that we got by extracting using R is a well-known dataset in th
 
 **Run the PySpark script:**
    ```sh
-   spark-submit IrisClassification.py
+   spark-submit Iris.py
    ```
 
 ## **Results**
