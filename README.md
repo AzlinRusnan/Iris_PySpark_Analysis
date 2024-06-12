@@ -174,3 +174,88 @@ Overall, the model's performance demonstrates its effectiveness in classifying t
 💡 Tip: This analysis can be further extended by exploring additional classification algorithms, feature engineering, and further hyperparameter tuning to improve the model's performance.
 
 # <div align="center">Enjoy 👍</div>
+
+#### **Appendix**
+   ```sh
+   from pyspark.sql import SparkSession
+   from pyspark import SparkContext, SparkConf
+   from pyspark.ml.feature import StringIndexer, VectorAssembler
+   from pyspark.ml.classification import RandomForestClassifier
+   from pyspark.ml.evaluation import MulticlassClassificationEvaluator
+   from pyspark.ml.tuning import CrossValidator, ParamGridBuilder
+
+   # Initialize Spark context and session
+   conf = SparkConf().setAppName("Iris Classification")
+   sc = SparkContext(conf=conf)
+   spark = SparkSession(sc)
+
+   # Load the Iris dataset
+   iris_data = spark.read.csv("file:///home/maria_dev/azlin/iris.csv", header=True, inferSchema=True)
+
+   # Rename the columns to mathc feature names
+   iris_data = iris_data.withColumnRenamed("Sepal.Length","sepalLength")\
+                        .withColumnRenamed("Sepal.Width","sepalWidth")\
+                        .withColumnRenamed("Petal.Length","petalLength")\
+                        .withColumnRenamed("Petal.Width","petalWidth")\
+                        .withColumnRenamed("Species","label")
+
+   # Index labels (convert string labels to numeric)
+   indexer = StringIndexer(inputCol="label", outputCol="indexedLabel").fit(iris_data)
+   iris_data = indexer.transform(iris_data)
+
+   # Verify the label indexing
+   label_to_index = {row['label']: row['indexedLabel'] for row in iris_data.select("label", "indexedLabel").distinct().collect()}
+   print("Label to Index Mapping:", label_to_index)
+
+   # Assemble features into a feature vector
+   assembler = VectorAssembler(inputCols=["sepalLength", "sepalWidth", "petalLength", "petalWidth"], outputCol="features")
+   iris_data = assembler.transform(iris_data)
+
+   # Show the first 5 rows
+   iris_data.show(5)
+
+   # Print
+   iris_data.printSchema()
+
+   # Split the dataset into training and testing sets
+   train_data, test_data = iris_data.randomSplit([0.8,0.2], seed=42)
+
+   # Random Forest is selected as a classification algorithm
+   randomForest = RandomForestClassifier(labelCol="indexedLabel", featuresCol="features")
+
+   #Define a grid of hyperparameter to search over
+   paramGrid = ParamGridBuilder()\
+       .addGrid(randomForest.numTrees, [10,20,30])\
+       .addGrid(randomForest.maxDepth, [5,10,15])\
+       .build()
+
+   # Use cross-validation to tune hyperparameters
+   crossval = CrossValidator(estimator=randomForest,
+                             estimatorParamMaps=paramGrid,
+                             evaluator=MulticlassClassificationEvaluator(labelCol="indexedLabel", metricName="accuracy"),
+                             numFolds=5)
+
+   # Fit the model on the training data
+   cv_model = crossval.fit(train_data)
+
+   # Evaluate the model on the test data
+   predictions = cv_model.transform(test_data)
+
+   # Evaluate the performance of the model
+   evaluator = MulticlassClassificationEvaluator(labelCol="indexedLabel", predictionCol="prediction")
+   accuracy = evaluator.evaluate(predictions, {evaluator.metricName: "accuracy"})
+   precision = evaluator.evaluate(predictions, {evaluator.metricName: "weightedPrecision"})
+   recall = evaluator.evaluate(predictions, {evaluator.metricName: "weightedRecall"})
+   f1 = evaluator.evaluate(predictions, {evaluator.metricName: "f1"})
+
+   print("Accuracy: {}".format(accuracy))
+   print("Precision: {}".format(precision))
+   print("Recall: {}".format(recall))
+   print("F1-Score: {}".format(f1))
+   
+   #Collect predictions to a pandas Dataframe for visualisation
+   predictions.select("indexedLabel", "prediction").groupBy("indexedLabel","prediction").count().show()
+
+   sc.stop()
+
+   ```
