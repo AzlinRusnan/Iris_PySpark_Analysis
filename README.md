@@ -1,5 +1,5 @@
 
-# <div align="center">IRIS CLASSIFICATION WITH PySpark</div>
+# <div align="center">Iris Classification with PySpark</div>
 
 ## <div align="center">![Intro](images/iris2.png)
 
@@ -8,9 +8,9 @@
 - [Introduction](#introduction)
 - [Objectives](#objectives)
 - [Methodology](#methodology)
-- [Visualizations](#visualisation)
 - [Running the Code](#running-the-code)
 - [Results](#results)
+- [Visualizations](#visualizations)
 - [Conclusion](#conclusion)
 
 ##  Introduction 
