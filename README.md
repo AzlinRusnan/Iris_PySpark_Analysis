@@ -8,6 +8,7 @@
 - [Introduction](#introduction)
 - [Objectives](#objectives)
 - [Methodology](#methodology)
+- [Visualizations](#visualisation)
 - [Running the Code](#running-the-code)
 - [Results](#results)
 - [Conclusion](#conclusion)
@@ -127,7 +128,16 @@ The Iris dataset is a well-known dataset in the field of machine learning, often
    spark-submit IrisClassification.py
    ```
 
-### **📊 Visualizations**
+## **Visualizations**
+**Running the Code Inside Google Colab to have the visualisation**
+
+**ROC Curve**
+
+>![ROC_Curve](images/roccurve.png)
+>
+>**Insight:**
+>
+>The ROC curve and AUC score of 1.0 confirm that the model is extremely effective in distinguishing between the different classes of the Iris dataset. This high performance is consistent with the confusion matrix results and the metrics of accuracy, precision, recall, and F1-score. Together, they demonstrate that the Random Forest classifier is highly accurate and reliable for this dataset.
 
 ## **Results**
 
