@@ -15,7 +15,7 @@
 
 ##  Introduction 
 
-The Iris dataset is a well-known dataset in the field of machine learning, often used for demonstrating classification algorithms. It contains measurements of three different species of iris flowers (setosa, versicolor, and virginica) with four features: sepal length, sepal width, petal length, and petal width. The goal of this project is to build a classification model using PySpark's MLlib to accurately predict the species of an iris flower based on these measurements.
+The Iris dataset that we got by extracting using R is a well-known dataset in the field of machine learning, often used for demonstrating classification algorithms. It contains measurements of three different species of iris flowers (setosa, versicolor, and virginica) with four features: sepal length, sepal width, petal length, and petal width. The goal of this project is to build a classification model using PySpark's MLlib to accurately predict the species of an iris flower based on these measurements.
 
 ##  Objectives 
 
@@ -128,18 +128,8 @@ The Iris dataset is a well-known dataset in the field of machine learning, often
    spark-submit IrisClassification.py
    ```
 
-## **Visualizations**
-**Running the Code Inside Google Colab to have the visualisation**
-
-**ROC Curve**
-
->![ROC_Curve](images/roccurve.png)
->
->**Insight:**
->
->The ROC curve and AUC score of 1.0 confirm that the model is extremely effective in distinguishing between the different classes of the Iris dataset. This high performance is consistent with the confusion matrix results and the metrics of accuracy, precision, recall, and F1-score. Together, they demonstrate that the Random Forest classifier is highly accurate and reliable for this dataset.
-
 ## **Results**
+**Confusion Matrix**
 
 ![Spark_Result](images/sparkresult.png)
 
@@ -153,6 +143,18 @@ The Iris dataset is a well-known dataset in the field of machine learning, often
   - Incorrectly classified as 1.0 (virginica): 1 instance.
 - Class 2.0 (setosa):
   - Correctly classified as 2.0 (setosa): 7 instances.
+
+## **Visualizations**
+
+**Running the Code Inside Google Colab to have the visualisation**
+
+**ROC Curve**
+
+>![ROC_Curve](images/roccurve.png)
+>
+>**Insight:**
+>
+>The ROC curve and AUC score of 1.0 confirm that the model is extremely effective in distinguishing between the different classes of the Iris dataset. This high performance is consistent with the confusion matrix results and the metrics of accuracy, precision, recall, and F1-score. Together, they demonstrate that the Random Forest classifier is highly accurate and reliable for this dataset.
 
 ## **Conclusion**
 The Random Forest classifier performed well on the Iris dataset, achieving high accuracy and balanced precision, recall, and F1-scores. 
@@ -171,3 +173,4 @@ Overall, the model's performance demonstrates its effectiveness in classifying t
 
 💡 Tip: This analysis can be further extended by exploring additional classification algorithms, feature engineering, and further hyperparameter tuning to improve the model's performance.
 
+# <div align="center">Enjoy 👍</div>
