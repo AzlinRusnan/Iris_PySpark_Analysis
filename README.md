@@ -3,6 +3,10 @@
 
 ## <div align="center">![Intro](images/iris2.png)
 
+##  Introduction 
+
+The Iris dataset that we got by extracting using R is a well-known dataset in the field of machine learning, often used for demonstrating classification algorithms. It contains measurements of three different species of iris flowers (setosa, versicolor, and virginica) with four features: sepal length, sepal width, petal length, and petal width. The goal of this project is to build a classification model using PySpark's MLlib to accurately predict the species of an iris flower based on these measurements.
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -12,10 +16,6 @@
 - [Running the Code](#running-the-code)
 - [Results](#results)
 - [Conclusion](#conclusion)
-
-##  Introduction 
-
-The Iris dataset that we got by extracting using R is a well-known dataset in the field of machine learning, often used for demonstrating classification algorithms. It contains measurements of three different species of iris flowers (setosa, versicolor, and virginica) with four features: sepal length, sepal width, petal length, and petal width. The goal of this project is to build a classification model using PySpark's MLlib to accurately predict the species of an iris flower based on these measurements.
 
 ##  Objectives 
 
