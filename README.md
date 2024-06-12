@@ -3,7 +3,7 @@
 
 ## <div align="center">![Intro](images/iris2.png)
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Introduction](#introduction)
 - [Objectives](#objectives)
