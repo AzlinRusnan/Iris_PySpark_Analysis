@@ -19,11 +19,12 @@ The Iris dataset that we got by extracting using R is a well-known dataset in th
 
 ##  Objectives 
 
-1. Load the Iris dataset into a Spark DataFrame.
-2. Split the dataset into training and testing sets.
-3. Select and implement a classification algorithm using Spark MLlib.
-4. Employ techniques such as cross-validation and grid search to fine-tune hyperparameters.
-5. Evaluate the performance of the tuned model using relevant evaluation metrics (accuracy, precision, recall, F1-score).
+1. Extract the Iris dataset from R
+2. Load the Iris dataset into a Spark DataFrame.
+3. Split the dataset into training and testing sets.
+4. Select and implement a classification algorithm using Spark MLlib.
+5. Employ techniques such as cross-validation and grid search to fine-tune hyperparameters.
+6. Evaluate the performance of the tuned model using relevant evaluation metrics (accuracy, precision, recall, F1-score).
 
 ## Methodology
 
