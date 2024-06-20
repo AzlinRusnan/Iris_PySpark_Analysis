@@ -81,6 +81,9 @@ The Iris dataset that we got by extracting using R is a well-known dataset in th
    >
    > Above output shows 'setosa' was indexed as 2.0, 'versicolor' as 0.0, and 'virginica' as 1.0.
    >
+
+**Random Forest**
+
    ```sh
    # Split the dataset into training and testing sets
    train_data, test_data = iris_data.randomSplit([0.8,0.2], seed=42)
@@ -102,7 +105,9 @@ The Iris dataset that we got by extracting using R is a well-known dataset in th
 
    # Fit the model on the training data
    cv_model = crossval.fit(train_data)
-
+   ```
+**Model Evaluation**
+   ```sh
    # Evaluate the model on the test data
    predictions = cv_model.transform(test_data)
 
