@@ -84,6 +84,8 @@ The Iris dataset that we got by extracting using R is a well-known dataset in th
 
 **Random Forest**
 
+Random Forest handles multiclass classification well, captures non-linear relationships, provides insights into feature importance, and is less prone to overfitting due to its ensemble nature. The Iris dataset is a classic example of a multiclass classification problem with three classes (setosa, versicolor, and virginica) and Random Forest is well-suited for handling multiclass classification tasks effectively.
+
    ```sh
    # Split the dataset into training and testing sets
    train_data, test_data = iris_data.randomSplit([0.8,0.2], seed=42)
