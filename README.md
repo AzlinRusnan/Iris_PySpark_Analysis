@@ -135,7 +135,26 @@ The Iris dataset that we got by extracting using R is a well-known dataset in th
    ```
 
 ## **Results**
-**Confusion Matrix**
+### **Confusion Matrix**
+
+**Lets understand Confusion Matrix before we going to the result analysis.**
+
+A confusion matrix is a table that helps us understand the performance of a classification model. It compares the actual values with the predicted values and provides insights into the accuracy of the predictions. Here’s how it works:
+
+**Structure of a Confusion Matrix**
+
+The confusion matrix is typically a 2x2 table for binary classification (where there are only two possible outcomes, like "Yes" or "No"). It looks like this:
+
+![confusionmatrix](images/Cm.png)
+
+Each cell in the table has a specific meaning:
+
+- TP (True Positive): The model predicted "Yes," and the actual value is also "Yes."
+- TN (True Negative): The model predicted "No," and the actual value is also "No."
+- FP (False Positive): The model predicted "Yes," but the actual value is "No."
+- FN (False Negative): The model predicted "No," but the actual value is "Yes."
+
+**Now you have understand the Confusion Matrix, lets get back to out result of confusion matrix from Iris dataset!**
 
 ![Spark_Result](images/sparkresult.png)
 
