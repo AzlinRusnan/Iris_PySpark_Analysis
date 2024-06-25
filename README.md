@@ -1,7 +1,7 @@
 
 # <div align="center">Iris Classification with PySpark</div>
 
-## <div align="center">![Intro](images/iris2.png)
+<div align="center"><img src="images/iris2.png" alt="Intro" /></div>
 
 ## Table of Contents
 
